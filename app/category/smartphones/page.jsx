@@ -17,7 +17,7 @@ const Page = () => {
   return (
     <div>
       {categoriesLoad ? (
-        <div className="my-4 py-5">
+        <div className="my-4 py-5 my-5">
           <PropagateLoader color="#36d7b7" className="text-center my-5 py-5" />
         </div>
       ) : (
