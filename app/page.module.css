@@ -1,0 +1,10 @@
+.d-block {
+  padding: 50em;
+  background-color: black;
+}
+.hover:hover {
+  background-color: aqua;
+}
+.div {
+  padding: 40em;
+}

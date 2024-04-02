@@ -1,0 +1,23 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+.active:hover {
+  color: rgb(23, 194, 23) !important;
+}
+.icon1:hover {
+  color: blue;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  cursor: pointer;
+}
+.text-decoration-none:hover {
+  color: rgb(23, 194, 23) !important;
+}
+.buttonHover:hover {
+  background-color: aliceblue;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+}

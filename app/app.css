@@ -1,0 +1,22 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+.hov:hover {
+  transform: scale(1.05);
+  transition-duration: 0.2s;
+}
+.zoom:hover {
+  cursor: zoom-in;
+}
+.zoomIn:hover {
+  border: solid;
+  border-color: #447a48;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  scale: 0.5;
+}
+.margin {
+  margin-bottom: initial;
+}
