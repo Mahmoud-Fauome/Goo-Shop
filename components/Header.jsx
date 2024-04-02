@@ -64,7 +64,7 @@ export default function Header() {
               <div className="me-2 fs-6">
                 {" "}
                 <RiMenu3Line className="fs-1" onClick={handleShow} />
-                <Offcanvas className="w-25" show={show} onHide={handleClose}>
+                <Offcanvas show={show} onHide={handleClose}>
                   <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="fw-bold">
                       Side Menu
