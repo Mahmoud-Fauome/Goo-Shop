@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <div>
       {categoriesLoad ? (
-        <div className="my-4 py-5 my-5">
+        <div style={{ padding: "5.8em" }}>
           <PropagateLoader color="#36d7b7" className="text-center my-5 py-5" />
         </div>
       ) : (
@@ -26,7 +26,7 @@ const Page = () => {
           <h4 className="border-start border-success border-4 mx-4 fw-bold text-secondary bg-secondary-subtle shadow p-4">
             SEE OUR HOME-DECORATION
           </h4>
-          <div className=" d-flex flex-wrap justify-content-center mt-5">
+          <div className="d-flex flex-wrap justify-content-center mt-5">
             {categories.map((decore, index) => (
               <Card
                 key={index}

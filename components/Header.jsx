@@ -30,8 +30,9 @@ export default function Header() {
   const countProduts = [...count];
   const [words, setWords] = useState("");
   const dispatch = useDispatch();
-  function searchFunc(params) {
+  function searchFunc() {
     dispatch(getSearchData(words));
+    setWords("");
   }
   return (
     <Navbar
@@ -221,103 +222,104 @@ export default function Header() {
               aria-controls="navbarScroll"
             />
           </div>
-          <Navbar.Collapse
-            className="me-4 ms-3 d-flex flex-column-reverse"
-            id="navbarScroll"
-          >
-            <Nav className=" me-auto my-2 my-lg-0">
-              <Nav.Link
-                as={Link}
-                className="fs-6 text-white"
-                href="/category/smartphones"
-              >
-                Smartphones
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/laptops"
-              >
-                Laptops
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/fragrances"
-              >
-                Fragrances
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/skincare"
-              >
-                Skincare
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/groceries"
-              >
-                Groceries
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/decoration"
-              >
-                Home-decoration
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                className="text-white "
-                href="/category/furniture"
-              >
-                Furniture
-              </Nav.Link>
-              <Nav.Link as={Link} className="text-white " href="/category/tops">
-                Tops
-              </Nav.Link>
-            </Nav>
-            <Form className="w-100 d-flex">
-              <Form.Control
-                value={words}
-                onChange={(e) => setWords(e.target.value)}
-                type="search"
-                placeholder="Tybe here.."
-                className="text-white bg-transparent me-2"
-                aria-label="Search"
-              />
-              <Button
-                disabled={!words && true}
-                onClick={() => searchFunc()}
-                variant="success"
-              >
-                <Link
-                  className="text-white text-decoration-none"
-                  href="/search"
+          <Navbar.Collapse id="navbarScroll">
+            <div className="w-100 ms-4">
+              <Form className=" d-flex">
+                <Form.Control
+                  value={words}
+                  onChange={(e) => setWords(e.target.value)}
+                  type="search"
+                  placeholder="Tybe here.."
+                  className="text-white bg-transparent me-2"
+                  aria-label="Search"
+                />
+                <Button
+                  disabled={!words && true}
+                  onClick={() => searchFunc()}
+                  variant="success"
                 >
-                  {" "}
-                  Search
-                </Link>
-              </Button>
-            </Form>
-          </Navbar.Collapse>
-          <div className="ms-3">
-            <div>
+                  <Link
+                    className="text-white text-decoration-none"
+                    href="/search"
+                  >
+                    {" "}
+                    Search
+                  </Link>
+                </Button>
+              </Form>
+              <Nav className=" me-auto my-2 my-lg-0">
+                <Nav.Link
+                  as={Link}
+                  className="fs-6 text-white"
+                  href="/category/smartphones"
+                >
+                  Smartphones
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/laptops"
+                >
+                  Laptops
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/fragrances"
+                >
+                  Fragrances
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/skincare"
+                >
+                  Skincare
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/groceries"
+                >
+                  Groceries
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/decoration"
+                >
+                  Home-decoration
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/furniture"
+                >
+                  Furniture
+                </Nav.Link>
+                <Nav.Link
+                  as={Link}
+                  className="text-white "
+                  href="/category/tops"
+                >
+                  Tops
+                </Nav.Link>
+              </Nav>
+            </div>
+            <div className="ms-4">
               <OverlayTrigger
                 placement="bottom"
                 overlay={
-                  <Tooltip
-                    // style={{ width: "23em" }}
-                    className=" border border-success rounded-3 bg-white text-center mt-3"
-                  >
-                    <div className="text-center mb-3 ">
-                      <p className="shadow fs-6 py-3 border-2 border-bottom text-success border-success ">
+                  <Tooltip className=" border border-success rounded-3 bg-white text-center mt-3">
+                    <div>
+                      <p
+                        style={{ fontFamily: "auto" }}
+                        className="shadow fs-6 fw-bold py-3 border-2 border-bottom text-success border-success "
+                      >
                         Recenlty Added Products
                       </p>
                       {countProduts.length === 0 ? (
-                        <div className="px-3 d-flex flex-column align-items-center py-5">
+                        <div className=" d-flex flex-column align-items-center py-2">
                           <img
                             width={"130em"}
                             src="https://goomarket.vercel.app/assets/shopping_cart-b0846037.png"
@@ -340,15 +342,17 @@ export default function Header() {
                           {countProduts.map((product) => (
                             <div
                               key={product.id}
-                              className="d-flex align-items-start justify-content-between gap-2 pb-3 mb-3 border-bottom border-3"
+                              className="d-flex align-items-start justify-content-between gap-2 mb-4 border-bottom border-2"
                             >
                               <img
                                 className="rounded-1"
-                                style={{ width: "16%" }}
+                                style={{ width: "20%" }}
                                 src={product.thumbnail}
                               />
-                              <p className="">{product.title}</p>
-                              <p className="">
+                              <p style={{ fontSize: "smaller" }}>
+                                {product.title}
+                              </p>
+                              <p style={{ fontSize: "smaller" }}>
                                 EGP{" "}
                                 {Math.ceil(
                                   product.price -
@@ -361,11 +365,12 @@ export default function Header() {
                           ))}
                           <button className="btn btn-success">
                             <Link
+                              style={{ fontSize: "small" }}
                               className="text-white text-decoration-none"
                               href="/carts"
                             >
                               {" "}
-                              VIEW MY SHOPPING CART
+                              VIEW
                             </Link>
                           </button>
                         </div>
@@ -394,7 +399,7 @@ export default function Header() {
                 )}
               </OverlayTrigger>
             </div>
-          </div>
+          </Navbar.Collapse>
         </div>
       </Container>
     </Navbar>

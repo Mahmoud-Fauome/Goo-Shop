@@ -19,13 +19,18 @@ export const getSearchData = createAsyncThunk(
 
 const search = createSlice({
   name: "search",
-  initialState: { searchWord: [] },
+  initialState: { searchWord: [], searchWordLoad: true },
   extraReducers: (builder) => {
-    builder.addCase(getSearchData.pending, (state) => {});
+    builder.addCase(getSearchData.pending, (state) => {
+      state.searchWordLoad = true;
+    });
     builder.addCase(getSearchData.fulfilled, (state, action) => {
+      state.searchWordLoad = false;
       state.searchWord = action.payload.products;
     });
-    builder.addCase(getSearchData.rejected, (state) => {});
+    builder.addCase(getSearchData.rejected, (state) => {
+      state.searchWordLoad = false;
+    });
   },
 });
 export default search.reducer;
