@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <div>
       {categoriesLoad ? (
-        <div style={{ padding: "14.5em" }}>
+        <div style={{ padding: "5.8em", height: "30em" }}>
           <PropagateLoader color="#36d7b7" className="text-center my-5 py-5" />
         </div>
       ) : (

@@ -48,7 +48,7 @@ export default function Header() {
             <TiSocialFacebookCircular className="icon1 fs-4 mx-1" />
             <TiSocialTwitter className="fs-4 icon1" />
           </div>
-          <div style={{ fontSize: "smaller" }} className="d-flex mb-2">
+          <div style={{ fontSize: "smaller" }} className="d-flex mb-1">
             <Nav.Link className="text-decoration-none d-flex border-end border-4 border-white me-1 pe-1">
               <MdOutlineContactSupport className="fs-5" />
               Support
