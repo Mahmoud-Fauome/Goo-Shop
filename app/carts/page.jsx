@@ -150,7 +150,7 @@ function Page() {
         </div>
       ) : (
         <div
-          style={{ height: "22em" }}
+          style={{ height: "24em" }}
           className="d-flex align-items-center flex-column my-5"
         >
           <img
