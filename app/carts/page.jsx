@@ -43,7 +43,6 @@ function Page() {
   };
   return (
     <div>
-      {window.innerWidth >= "537x" && <h1>| The Table is Overflow |</h1>}
       {countProduts && countProduts.length > 0 ? (
         <div className="mx-4">
           <div className="overflow-auto">
