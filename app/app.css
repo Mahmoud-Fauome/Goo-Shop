@@ -20,3 +20,13 @@
 .margin {
   margin-bottom: initial;
 }
+/* @media screen and (max-width: 600px) {
+  .carsWidth {
+    height: 9em;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .carsWidth {
+    height: 22em;
+  }
+} */

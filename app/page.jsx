@@ -29,8 +29,14 @@ export default function Home() {
         data-bs-theme="dark"
         className="bg-white p-3 mb-3"
       >
+        {/* {typeof window !== "undefined" && ( */}
         <Carousel.Item
-          style={{ height: window.innerHeight >= "800px" && "12em" }}
+          style={{
+            height:
+              typeof window !== "undefined" &&
+              window.innerHeight >= "800px" &&
+              "12em",
+          }}
         >
           <img
             className="d-block w-100"
@@ -39,7 +45,12 @@ export default function Home() {
           />
         </Carousel.Item>
         <Carousel.Item
-          style={{ height: window.innerHeight >= "800px" && "12em" }}
+          style={{
+            height:
+              typeof window !== "undefined" &&
+              window.innerHeight >= "800px" &&
+              "12em",
+          }}
         >
           <img
             className="d-block w-100"
