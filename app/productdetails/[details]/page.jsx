@@ -38,13 +38,12 @@ const Page = ({ params }) => {
             show={show}
             onHide={() => setShow(false)}
             className=" bg-black bg-opacity-75"
-            dialogClassName="modal-90w"
             aria-labelledby="example-custom-modal-styling-title"
           >
             <Carousel interval={100000}>
               {prodDetails.images &&
                 prodDetails.images.map((img, index) => (
-                  <Carousel.Item key={index} style={{ height: "37rem" }}>
+                  <Carousel.Item key={index} className="carsWidth">
                     <img
                       src={img}
                       className="text-center m-auto d-block align-items-center h-100"
@@ -68,10 +67,7 @@ const Page = ({ params }) => {
             ))}
         </div>
       </div>
-      <div
-        className="col-lg-6 col-sm-12 col-md-6 d-flex flex-column"
-        style={{ alignItems: window.innerWidth <= 766 && "center" }}
-      >
+      <div className="col-lg-6 col-sm-12 col-md-6 d-flex flex-column alignItems">
         <p className="fw-bold">{prodDetails.title}</p>
         <hr />
         <p className="text-secondary ">{prodDetails.description}</p>

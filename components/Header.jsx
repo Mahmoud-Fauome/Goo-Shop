@@ -45,7 +45,7 @@ export default function Header() {
           <div className="d-flex">
             <h6 className="text-bold">Follow us on</h6>
 
-            <TiSocialFacebookCircular className="icon1 fs-4 mx-2" />
+            <TiSocialFacebookCircular className="icon1 fs-4 mx-1" />
             <TiSocialTwitter className="fs-4 icon1" />
           </div>
           <div className="d-flex ">
