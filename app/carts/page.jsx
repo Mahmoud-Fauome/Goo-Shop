@@ -149,7 +149,10 @@ function Page() {
           </div>
         </div>
       ) : (
-        <div className="d-flex align-items-center flex-column my-5">
+        <div
+          style={{ height: "22em" }}
+          className="d-flex align-items-center flex-column my-5"
+        >
           <img
             style={{ width: "14em" }}
             src="https://goomarket.vercel.app/assets/shopping_cart-b0846037.png"
